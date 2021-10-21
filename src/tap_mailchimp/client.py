@@ -54,7 +54,7 @@ class MailChimp:
         self._headers = request_headers or requests.utils.default_headers()
         if user_agent is not None:
             self._headers['User-Agent'] = user_agent
-        self._mc3 = MailChimp3ApiClient(user_name, api_key, timeout=timeout,
+        self._mc3 = MailChimp3ApiClient(api_key, user_name,  timeout=timeout,
                                         request_headers=self._headers, **kwargs)
 
     def list_export(self, list_id, status=Status.subscribed, segment=None,
