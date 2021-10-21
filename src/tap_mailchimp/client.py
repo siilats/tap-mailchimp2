@@ -234,14 +234,14 @@ class MailChimp:
         path = '/'.join([''.join([f[0].upper() + f[1:]
                                   for f in p.split('_')])
                          for p in endpoint.split('.')])
-        json_target = 'Instance' if item_def else 'Collection'
+        json_target = 'Response' if item_def else 'CollectionResponse'
         return '{base}/{path}/{target}.json'.format(base=self._schema_base,
                                                     path=path,
                                                     target=json_target)
 
     @property
     def _schema_base(self):
-        return 'https://{}/schema/3.0'.format(self._base_loc)
+        return 'https://{}/schema/3.0/Definitions'.format(self._base_loc)
 
     @property
     def _export_base(self):
