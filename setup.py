@@ -34,5 +34,6 @@ setup(name='tap-mailchimp',
       keywords=[],
       install_requires=['python-dateutil',
                         'requests',
-                        'singer-python'],
+                        'singer-python',
+                        'mailchimp3'],
       entry_points={'console_scripts': ['tap-mailchimp2 = tap_mailchimp:main']})
